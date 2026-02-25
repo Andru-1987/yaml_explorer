@@ -1,5 +1,5 @@
 {
-  "name": "YAML Explorer",
-  "description": "Una aplicación web simple y elegante para visualizar y explorar archivos YAML en forma de árbol interactivo y grafos.",
+  "name": "YAML Explorer Simplifier",
+  "description": "Permite visualizar y explorar archivos YAML en forma de árbol interactivo y grafos.",
   "requestFramePermissions": []
 }

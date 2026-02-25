@@ -1,46 +1,56 @@
-import React, { useState, useEffect } from 'react';
-import { FileCode2, LayoutList, Network, Upload, AlertCircle, BookOpen } from 'lucide-react';
+import React, { useState, useRef } from 'react';
+import { FileCode2, LayoutList, Network, Upload, AlertCircle, BookOpen, FileUp } from 'lucide-react';
 import { parseYaml } from './utils/yamlParser';
 import { TreeView } from './components/TreeView';
 import { D3TreeView } from './components/D3TreeView';
 import { DefinitionsView } from './components/DefinitionsView';
 import { cn } from './components/TreeView'; // Reusing the cn utility
 
-// Default example YAML
-import exampleYamlText from './example.yaml?raw';
-
 export default function App() {
   const [parsedData, setParsedData] = useState<any>(null);
+  const [fileName, setFileName] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [viewMode, setViewMode] = useState<'list' | 'graph' | 'definitions'>('graph');
+  const [dragOver, setDragOver] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
-  useEffect(() => {
-    try {
-      const data = parseYaml(exampleYamlText);
-      setParsedData(data);
-      setError(null);
-    } catch (err: any) {
-      setError(err.message || 'Invalid YAML format');
-    }
-  }, []);
+  const processFile = (file: File) => {
+    setFileName(file.name);
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      const content = e.target?.result as string;
+      try {
+        const data = parseYaml(content);
+        setParsedData(data);
+        setError(null);
+      } catch (err: any) {
+        setError(err.message || 'Invalid YAML format');
+        setParsedData(null);
+      }
+    };
+    reader.readAsText(file);
+  };
 
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        const content = e.target?.result as string;
-        try {
-          const data = parseYaml(content);
-          setParsedData(data);
-          setError(null);
-        } catch (err: any) {
-          setError(err.message || 'Invalid YAML format');
-        }
-      };
-      reader.readAsText(file);
+    if (file) processFile(file);
+  };
+
+  const handleDrop = (event: React.DragEvent<HTMLDivElement>) => {
+    event.preventDefault();
+    setDragOver(false);
+    const file = event.dataTransfer.files?.[0];
+    if (file && (file.name.endsWith('.yaml') || file.name.endsWith('.yml'))) {
+      processFile(file);
     }
   };
+
+  const handleDragOver = (event: React.DragEvent<HTMLDivElement>) => {
+    event.preventDefault();
+    setDragOver(true);
+  };
+
+  const handleDragLeave = () => setDragOver(false);
 
   return (
     <div className="dark min-h-screen font-sans flex flex-col bg-[#1C1C1E] text-[#F4F5F7] transition-colors duration-200">
@@ -108,39 +118,92 @@ export default function App() {
 
       {/* Main Content */}
       <main className="flex-1 max-w-[1600px] w-full mx-auto p-6 md:p-10">
-        <div className="flex flex-col gap-6 h-[calc(100vh-10rem)]">
-          <div className="flex items-center justify-between px-2">
-            <h2 className="text-[18px] font-semibold text-white tracking-tight">
-              Visualización {viewMode === 'list' ? 'Estructurada' : viewMode === 'graph' ? 'Gráfica' : 'de Definiciones'}
-            </h2>
-          </div>
-          
-          <div className="flex-1 overflow-hidden rounded-card bg-[#2C2C2E] shadow-card transition-colors duration-200 p-6">
-            {error ? (
-              <div className="w-full h-full flex flex-col items-center justify-center text-[#9A9AA0] p-8 text-center bg-[#1C1C1E]/50 rounded-[16px]">
-                <AlertCircle className="w-12 h-12 text-coral mb-4" />
-                <p className="text-[18px] font-semibold text-white mb-2">No se puede visualizar</p>
-                <p className="text-[14px] max-w-md">{error}</p>
+        {!parsedData && !error ? (
+          /* Landing page — no YAML loaded yet */
+          <div
+            className={`flex flex-col items-center justify-center min-h-[calc(100vh-8rem)] rounded-card border-2 border-dashed transition-all duration-300 ${
+              dragOver
+                ? 'border-lavender bg-lavender/10 scale-[1.01]'
+                : 'border-white/10 bg-[#2C2C2E]'
+            }`}
+            onDrop={handleDrop}
+            onDragOver={handleDragOver}
+            onDragLeave={handleDragLeave}
+          >
+            <div className="flex flex-col items-center gap-6 max-w-md text-center px-6">
+              {/* Icon */}
+              <div className="w-24 h-24 rounded-full bg-lavender/20 flex items-center justify-center shadow-lg">
+                <FileUp className="w-12 h-12 text-lavender" />
               </div>
-            ) : parsedData ? (
-              <div className="w-full h-full overflow-auto rounded-[16px] bg-[#1C1C1E] shadow-sm">
-                {viewMode === 'list' ? (
-                  <div className="p-4">
-                    <TreeView data={parsedData} />
-                  </div>
-                ) : viewMode === 'graph' ? (
-                  <D3TreeView data={parsedData} />
-                ) : (
-                  <DefinitionsView data={parsedData} />
+
+              {/* Title & description */}
+              <div>
+                <h2 className="text-[26px] font-bold text-white mb-2 tracking-tight">
+                  Sube tu archivo YAML
+                </h2>
+                <p className="text-[15px] text-[#9A9AA0] leading-relaxed">
+                  Para comenzar a explorar, arrastra y suelta tu archivo{' '}
+                  <span className="text-lavender font-medium">.yaml</span> o{' '}
+                  <span className="text-lavender font-medium">.yml</span> aquí, o haz clic en el botón de abajo.
+                </p>
+              </div>
+
+              {/* Upload button */}
+              <label className="flex items-center gap-2 px-6 py-3 bg-lavender text-text-primary hover:opacity-90 rounded-full text-[15px] font-semibold cursor-pointer transition-all shadow-md hover:shadow-hover hover:scale-[1.03] active:scale-[0.97]">
+                <Upload className="w-5 h-5" />
+                Seleccionar archivo
+                <input
+                  ref={fileInputRef}
+                  type="file"
+                  accept=".yaml,.yml"
+                  className="hidden"
+                  onChange={handleFileUpload}
+                />
+              </label>
+
+              {/* Hint */}
+              <p className="text-[13px] text-[#9A9AA0]/60">
+                Soporta archivos <code className="text-lavender/80">.yaml</code> y <code className="text-lavender/80">.yml</code>
+              </p>
+            </div>
+          </div>
+        ) : (
+          /* Explorer view — YAML loaded */
+          <div className="flex flex-col gap-6 h-[calc(100vh-10rem)]">
+            <div className="flex items-center justify-between px-2">
+              <h2 className="text-[18px] font-semibold text-white tracking-tight">
+                Visualización {viewMode === 'list' ? 'Estructurada' : viewMode === 'graph' ? 'Gráfica' : 'de Definiciones'}
+                {fileName && (
+                  <span className="ml-3 text-[13px] font-normal text-[#9A9AA0] bg-white/5 px-3 py-1 rounded-full">
+                    {fileName}
+                  </span>
                 )}
-              </div>
-            ) : (
-              <div className="w-full h-full flex items-center justify-center text-[#9A9AA0] bg-[#1C1C1E] rounded-[16px]">
-                <p>Sube un archivo YAML para visualizar</p>
-              </div>
-            )}
+              </h2>
+            </div>
+
+            <div className="flex-1 overflow-hidden rounded-card bg-[#2C2C2E] shadow-card transition-colors duration-200 p-6">
+              {error ? (
+                <div className="w-full h-full flex flex-col items-center justify-center text-[#9A9AA0] p-8 text-center bg-[#1C1C1E]/50 rounded-[16px]">
+                  <AlertCircle className="w-12 h-12 text-coral mb-4" />
+                  <p className="text-[18px] font-semibold text-white mb-2">No se puede visualizar</p>
+                  <p className="text-[14px] max-w-md">{error}</p>
+                </div>
+              ) : (
+                <div className="w-full h-full overflow-auto rounded-[16px] bg-[#1C1C1E] shadow-sm">
+                  {viewMode === 'list' ? (
+                    <div className="p-4">
+                      <TreeView data={parsedData} />
+                    </div>
+                  ) : viewMode === 'graph' ? (
+                    <D3TreeView data={parsedData} />
+                  ) : (
+                    <DefinitionsView data={parsedData} />
+                  )}
+                </div>
+              )}
+            </div>
           </div>
-        </div>
+        )}
       </main>
     </div>
   );
