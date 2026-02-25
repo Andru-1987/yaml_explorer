@@ -1,0 +1,470 @@
+# DEFINICIONES DE NEGOCIO
+# Jerarquia de contenido
+hierarchies:
+  - id: "hard_news"
+    label: "Hard News"
+    definition: "Noticias y análisis de alta relevancia. Hechos concretos, verificables y de impacto, o bien puntos de vista sobre los mismos."
+    context: "Hechos fácticos, urgentes y de alto impacto que definen la agenda informativa."
+    tematicas:
+      - label: "Economía"
+        subtematicas:
+          - label: "Macroeconomía"
+            definition: "Noticias y Análisis sobre los grandes indicadores económicos Nacionales."
+            tags: ["inflación", "INDEC", "dólar", "mercados cambiarios", "PBI", "actividad económica", "finanzas públicas", "deuda", "FMI", "política monetaria", "Banco Central", "tasas de interés", "política fiscal", "MERCOSUR", "balanza comercial", "salarios", "jubilaciones", "paritarias"]
+            subtopics:
+              - "Inflación y Precios: Datos del INDEC, análisis de la suba de precios, impacto en el poder adquisitivo, medidas gubernamentales"
+              - "Dólar y Mercados Cambiarios: Cotizaciones, brecha, regulaciones, análisis de la demanda y oferta"
+              - "Actividad Económica: PBI, producción industrial, comercio, servicios, empleo y desempleo"
+              - "Finanzas Públicas y Deuda: Presupuesto, gasto público, recaudación, deuda externa e interna, relación con el FMI"
+              - "Política Monetaria y Fiscal: Decisiones del Banco Central, tasas de interés, medidas fiscales del gobierno"
+              - "Relaciones Económicas Internacionales: Acuerdos comerciales (MERCOSUR, etc.), balanza comercial, impacto de eventos globales en Argentina"
+              - "Salarios y Jubilaciones: Paritarias, ingresos, haberes jubilatorios, impacto de la inflación"
+          
+          - label: "Economía Personal y Finanzas"
+            definition: "Información práctica y consejos para la gestión de las finanzas personales y el impacto de las decisiones económicas en el hogar."
+            tags: ["ahorro", "inversión", "plazo fijo", "bonos", "acciones", "CEDEARs", "consumo", "crédito", "tarjetas", "préstamos", "impuestos", "AFIP", "ganancias", "bienes personales", "mercado inmobiliario", "alquiler", "hipotecas", "trámites"]
+            subtopics:
+              - "Ahorro e Inversión: Opciones de inversión (plazo fijo, bonos, acciones, CEDEARs), consejos para ahorrar, educación financiera básica"
+              - "Consumo y Crédito: Precios en supermercados, ofertas, uso de tarjetas de crédito y préstamos, programas de fomento al consumo"
+              - "Impuestos y Trámites: AFIP, Ganancias, Bienes Personales, trámites económicos comunes"
+              - "Mercado Inmobiliario: Precios de alquiler y venta, hipotecas, perspectivas"
+          
+          - label: "Sectores Económicos y Empresas"
+            definition: "Noticias y análisis específicos sobre los distintos sectores de la economía y el mundo empresarial."
+            tags: ["campo", "agro", "commodities", "industria", "producción", "servicios", "turismo", "tecnología", "energía", "minería", "combustibles", "empresas", "fusiones", "adquisiciones", "balances", "startups", "pymes", "emprendedores", "financiamiento"]
+            subtopics:
+              - "Campo (Agro): Precios de commodities, exportaciones, clima, impacto de políticas"
+              - "Industria: Producción, empleo, políticas industriales, nuevas inversiones"
+              - "Servicios: Turismo, tecnología, finanzas, salud, educación, transporte"
+              - "Energía y Minería: Precios de combustibles, exploración, inversiones, regulaciones"
+              - "Empresas Destacadas: Noticias corporativas, fusiones, adquisiciones, balances, startups, pymes"
+              - "Emprendedores: Historias de éxito, consejos, financiamiento, ecosistema emprendedor"
+          
+          - label: "Inversiones"
+            definition: "Información detallada sobre los mercados financieros y las oportunidades de inversión."
+            tags: ["bolsa", "Merval", "acciones", "volumen", "recomendaciones", "bonos", "renta fija", "títulos públicos", "obligaciones negociables", "criptomonedas", "bitcoin", "regulación", "materias primas", "soja", "petróleo", "oro", "Wall Street", "mercados internacionales", "índices bursátiles"]
+            subtopics:
+              - "Bolsa Local (Merval): Análisis de acciones, volumen de operaciones, recomendaciones de inversión"
+              - "Bonos y Renta Fija: Títulos públicos, obligaciones negociables, rendimientos"
+              - "Criptomonedas: Novedades, cotizaciones, regulación, riesgos"
+              - "Materias Primas: Precios internacionales de soja, petróleo, oro, etc."
+              - "Mercados Internacionales: Índices bursátiles (Wall Street), tasas de interés globales, noticias económicas de impacto global"
+          
+          - label: "Opinión y Columnas de Economía"
+            definition: "Artículos de análisis, perspectiva y opinión de economistas, periodistas especializados y referentes del sector."
+            tags: ["análisis político-económico", "perspectivas", "pronósticos", "escenarios", "debate de ideas", "columnas", "economistas", "interpretación"]
+            subtopics:
+              - "Análisis Político-Económico: Interpretación de decisiones gubernamentales y sus efectos"
+              - "Perspectivas Futuras: Pronósticos económicos y escenarios posibles"
+              - "Debate de Ideas: Diferentes visiones sobre problemas económicos y soluciones"
+
+      - label: "Política"
+        subtematicas:
+          - label: "Gobierno y Poder Ejecutivo"
+            definition: "Anuncios presidenciales, gestión de ministros, implementación de políticas públicas."
+            tags: ["presidente", "ministros", "políticas públicas", "anuncios", "discursos", "gestión", "relaciones interpoderes", "mensajes oficiales"]
+            subtopics:
+              - "Anuncios presidenciales, gestión de ministros, implementación de políticas públicas, relaciones interpoderes, mensajes y discursos oficiales"
+          
+          - label: "Poder Legislativo"
+            definition: "Actividad de Diputados y Senadores, tratamiento y votación de leyes."
+            tags: ["diputados", "senadores", "leyes", "votación", "bloques", "debates parlamentarios", "Congreso", "estrategias"]
+            subtopics:
+              - "Actividad de Diputados y Senadores, tratamiento y votación de leyes, estrategias de bloques, debates parlamentarios"
+          
+          - label: "Poder Judicial y Justicia"
+            definition: "Fallos de la Corte Suprema, causas judiciales de alto impacto."
+            tags: ["Corte Suprema", "fallos", "causas judiciales", "corrupción", "reformas judiciales", "fiscalías", "justicia"]
+            subtopics:
+              - "Fallos de la Corte Suprema, causas judiciales de alto impacto (corrupción, etc.), reformas judiciales, acciones de fiscalías"
+          
+          - label: "Partidos Políticos y Dirigencia"
+            definition: "Vida interna de los partidos, perfiles y declaraciones de figuras políticas."
+            tags: ["partidos", "alianzas", "divisiones", "elecciones internas", "figuras políticas", "declaraciones", "estrategias políticas"]
+            subtopics:
+              - "Vida interna de los partidos (elecciones, alianzas, divisiones), perfiles y declaraciones de figuras políticas, análisis de estrategias políticas"
+          
+          - label: "Política Provincial y Local"
+            definition: "Gestión de gobernadores e intendentes, legislaturas provinciales."
+            tags: ["gobernadores", "intendentes", "legislaturas provinciales", "política territorial", "provincias", "municipios"]
+            subtopics:
+              - "Gestión de gobernadores e intendentes, legislaturas provinciales, dinámicas políticas territoriales"
+          
+          - label: "Relaciones Internacionales y Geopolítica"
+            definition: "Diplomacia argentina, participación en organismos internacionales."
+            tags: ["diplomacia", "organismos internacionales", "relaciones bilaterales", "geopolítica", "eventos globales", "política exterior"]
+            subtopics:
+              - "Diplomacia argentina, participación en organismos internacionales, impacto de eventos globales en el país, relaciones bilaterales clave"
+          
+          - label: "Procesos Electorales y Calendario"
+            definition: "Cobertura exclusiva y detallada del proceso electoral en sus diferentes etapas."
+            tags: ["candidatos", "propuestas", "campañas", "estrategias", "elecciones", "encuestas", "proyecciones", "resultados", "escrutinio", "sistema electoral", "reforma electoral"]
+            subtopics:
+              - "Candidatos y Propuestas: Perfiles de los candidatos, sus plataformas, promesas de campaña, debates y declaraciones"
+              - "Campañas Electorales: Estrategias de comunicación, actos, caravanas, mensajes publicitarios, eventos de campaña"
+              - "Encuestas y Proyecciones: Publicación y análisis de sondeos de opinión pública, proyecciones de resultados, seguimiento de tendencias de voto"
+              - "Resultados y Escrutinio: Cobertura en vivo de los comicios, análisis de los datos del escrutinio provisorio y definitivo"
+              - "Reglas Electorales: Explicación del sistema electoral, normativa vigente, debates sobre posibles reformas electorales"
+
+      - label: "Internacional"
+        subtematicas:
+          - label: "El Mundo"
+            definition: "Noticias y análisis sobre el Gobierno Nacional, el Poder Legislativo, el Poder Judicial, la vida interna de los partidos políticos y sus dirigentes, la política provincial y local, y el rol de Argentina en el ámbito internacional."
+            tags: ["noticias internacionales", "conflictos", "política internacional", "economía global", "guerras", "diplomacia global"]
+
+      - label: "Deportes"
+        definition: "Cobertura deportiva nacional e internacional."
+        subtematicas:
+          - label: "Fútbol Nacional"
+            definition: "Cobertura de todos los deportes que se desarrollan o tienen un impacto principal en Argentina. Esto incluye la Liga Profesional de Fútbol, Copas Nacionales, el desempeño de deportistas argentinos en el país, ligas nacionales de otras disciplinas."
+            tags: ["Liga Profesional", "Copas Nacionales", "clubes argentinos", "fútbol local", "River", "Boca", "torneos locales"]
+          
+          - label: "Fútbol Internacional"
+            definition: "Seguimiento de las principales ligas de fútbol europeas, torneos internacionales y la participación de deportistas argentinos en el extranjero."
+            tags: ["Champions League", "Copa Libertadores", "ligas europeas", "Mundial", "selección argentina", "Messi"]
+          
+          - label: "Tenis"
+            definition: "Cobertura de tenis nacional e internacional, Grand Slams y deportistas argentinos."
+            tags: ["ATP", "WTA", "Grand Slam", "tenistas argentinos", "Roland Garros", "Wimbledon", "US Open", "Australian Open"]
+          
+          - label: "Básquet"
+            definition: "Cobertura de básquetbol nacional e internacional."
+            tags: ["NBA", "Liga Nacional", "básquet argentino", "selección de básquet"]
+          
+          - label: "Rugby"
+            definition: "Cobertura de rugby nacional e internacional."
+            tags: ["Los Pumas", "rugby argentino", "rugby internacional", "Six Nations", "Rugby Championship"]
+          
+          - label: "Fórmula 1"
+            definition: "Cobertura de Fórmula 1 y automovilismo."
+            tags: ["F1", "carreras", "pilotos", "escuderías", "Colapinto", "Gran Premio"]
+
+      - label: "Seguridad"
+        subtematicas:
+          - label: "Crónica Policial y Judicial"
+            definition: "Se centra en los hechos delictivos en sí, las investigaciones, los procesos judiciales y la actuación de las fuerzas de seguridad ante el crimen."
+            tags: ["delitos", "homicidios", "robos", "secuestros", "violaciones", "narcocriminalidad", "crimen organizado", "narcotráfico", "casos judiciales", "investigaciones", "fiscales", "jueces", "seguridad vial", "accidentes", "siniestros"]
+            subtopics:
+              - "Delitos de Alto Impacto: Cobertura detallada de casos que conmueven a la opinión pública, como homicidios, secuestros, robos violentos, o violaciones. Se sigue la investigación, los implicados y el desarrollo judicial"
+              - "Narcocriminalidad y Crimen Organizado: Reportajes sobre bandas criminales, operativos antidrogas, rutas del narcotráfico y la violencia asociada a estas redes"
+              - "Casos Judiciales en Desarrollo: Seguimiento de expedientes judiciales relevantes, avances en investigaciones, testimonios, decisiones de fiscales y jueces"
+              - "Seguridad Vial y Accidentes: Reportes de siniestros de tránsito, sus causas, consecuencias y medidas para la prevención"
+          
+          - label: "Políticas de Seguridad y Fuerzas"
+            definition: "Se abordan las decisiones del Estado en materia de seguridad, el rol de las fuerzas policiales y armadas, y los debates sobre cómo combatir el delito a nivel gubernamental."
+            tags: ["políticas gubernamentales", "estrategias seguridad", "fuerzas de seguridad", "PFA", "Gendarmería", "Prefectura", "Policía Ciudad", "Policía Buenos Aires", "operativos", "sistema penitenciario", "cárceles", "reforma penitenciaria", "debate político seguridad"]
+            subtopics:
+              - "Políticas y Estrategias Gubernamentales: Informes sobre los planes, anuncios y decisiones de los gobiernos (nacional, provincial, municipal) en materia de seguridad, prevención del delito y control"
+              - "Accionar de las Fuerzas de Seguridad: Noticias sobre operativos específicos, cambios en la estructura de la Policía Federal Argentina (PFA), Gendarmería, Prefectura, o la Policía de la Ciudad y Buenos Aires. También incluye debates sobre su accionar y recursos"
+              - "Sistema Penitenciario y Carcelario: Cobertura de la situación en cárceles, motines, proyectos de reforma penitenciaria"
+              - "Debate Político sobre Seguridad: Artículos que reflejan las discusiones entre distintos actores políticos sobre las causas del delito y las mejores formas de combatirlo"
+          
+          - label: "Análisis, Prevención y Aspectos Sociales"
+            definition: "Ofrece una mirada más profunda y contextual, buscando entender las causas del delito, sus consecuencias sociales y ofrecer herramientas de prevención."
+            tags: ["análisis expertos", "criminología", "sociología", "prevención", "consejos seguridad", "testimonios víctimas", "aspectos sociales delito", "resocialización", "causas criminalidad"]
+            subtopics:
+              - "Análisis y Opinión de Expertos: Columnas de criminólogos, sociólogos, exfuncionarios o periodistas especializados que ofrecen interpretaciones y perspectivas sobre fenómenos de seguridad"
+              - "Historias de Víctimas y Testimonios: Relatos personales de quienes sufrieron delitos, su proceso de recuperación y su lucha por justicia"
+              - "Prevención y Consejos para el Ciudadano: Artículos con recomendaciones prácticas para la seguridad personal, del hogar y en el ámbito digital (ej. prevención de estafas virtuales)"
+              - "Aspectos Sociales del Delito: Investigaciones o reportajes sobre las causas socioeconómicas de la criminalidad, la relación entre delito y pobreza, o la resocialización"
+
+  - id: "soft_news"
+    label: "Soft News"
+    definition: "Contenidos que entretienen o informan de manera amena, datos e información interesante e importante pero que no son 'urgentes'."
+    context: "Contenido atemporal, análisis, perfiles, guías, servicios."
+    tematicas:
+      - label: "Sociedad"
+        subtematicas:
+          - label: "Derechos Sociales y Problemáticas Humanas"
+            definition: "Aborda temas que conciernen a los derechos fundamentales, la inclusión, la diversidad y los desafíos sociales que enfrenta la población."
+            tags: ["derechos humanos", "memoria", "justicia transicional", "libertad expresión", "género", "diversidad", "LGTBIQ+", "violencia de género", "feminismo", "movimientos feministas", "pobreza", "vulnerabilidad social", "desigualdad", "programas sociales", "discapacidad", "inclusión", "accesibilidad"]
+            subtopics:
+              - "Derechos Humanos y Memoria: Noticias y análisis sobre la justicia transicional, derechos civiles, libertad de expresión y conmemoraciones históricas"
+              - "Género y Diversidad: Cobertura de temas de igualdad de género, derechos LGTBIQ+, violencia de género, movimientos feministas y de diversidad"
+              - "Pobreza y Vulnerabilidad Social: Reportajes sobre desigualdad, falta de acceso a servicios básicos, programas sociales y la realidad de los sectores más desfavorecidos"
+              - "Discapacidad e Inclusión: Noticias y análisis sobre la lucha por la inclusión de personas con discapacidad, accesibilidad y derechos"
+          
+          - label: "Educación, Ciencia y Tecnología"
+            definition: "Se enfoca en el sistema educativo, los avances del conocimiento y el impacto de la tecnología en la sociedad."
+            tags: ["sistema educativo", "educación pública", "educación privada", "reformas curriculares", "salarios docentes", "calidad educativa", "universidades", "ciencia", "investigación", "divulgación", "descubrimientos", "tecnología y sociedad", "inteligencia artificial", "IA", "redes sociales", "big data", "ética", "carreras", "ingreso universitario", "mercado laboral"]
+            subtopics:
+              - "Sistema Educativo y Políticas: Novedades sobre la educación pública y privada, reformas curriculares, salarios docentes, debates sobre la calidad educativa y el rol de las universidades"
+              - "Ciencia, Investigación y Divulgación: Descubrimientos científicos, avances en diversas disciplinas (medicina, astronomía, biología) y su difusión al público"
+              - "Tecnología y Sociedad: El impacto de las nuevas tecnologías (inteligencia artificial, redes sociales, big data) en la vida cotidiana, la ética y el futuro"
+              - "Novedades Universitarias y Carreras: Información sobre el ingreso a universidades, nuevas carreras, la oferta académica y el mercado laboral para profesionales"
+          
+          - label: "Salud Pública y Bienestar Social"
+            definition: "Abarca todo lo relacionado con la salud de la población, políticas sanitarias, hábitos de vida y el bienestar general."
+            tags: ["políticas sanitarias", "salud pública", "vacunación", "prevención enfermedades", "sistema de salud", "medicamentos", "cobertura médica", "nutrición", "ejercicio físico", "salud mental", "enfermedades crónicas", "estilo de vida saludable", "tratamientos", "investigación médica", "testimonios pacientes"]
+            subtopics:
+              - "Políticas Sanitarias y Salud Pública: Novedades sobre el sistema de salud, campañas de vacunación, prevención de enfermedades, debates sobre el acceso a medicamentos y cobertura médica"
+              - "Salud y Calidad de Vida (General): Artículos sobre nutrición, ejercicio físico, salud mental, prevención de enfermedades crónicas y consejos para un estilo de vida saludable"
+              - "Enfermedades y Tratamientos: Avances en investigación de enfermedades, nuevos tratamientos, testimonios de pacientes y descubrimientos médicos"
+          
+          - label: "Estilo de Vida y Fenómenos Sociales"
+            definition: "Explora las tendencias de consumo, los cambios en los hábitos de vida, los fenómenos culturales y sociales que definen la sociedad contemporánea."
+            tags: ["hábitos", "consumo", "patrones consumo", "modas", "redes sociales", "economía colaborativa", "relaciones", "familia", "pareja", "amistad", "maternidad", "paternidad", "historias de vida", "superación", "resiliencia", "fenómenos culturales", "movimientos juveniles", "virales"]
+            subtopics:
+              - "Hábitos y Consumo: Cambios en los patrones de consumo, nuevas modas, el impacto de las redes sociales en la vida diaria, economía colaborativa, etc."
+              - "Relaciones Interpersonales y Familia: Artículos sobre dinámicas familiares, relaciones de pareja, amistad, maternidad/paternidad y sus desafíos"
+              - "Historias de Vida e Interés Humano: Relatos personales de superación, resiliencia, experiencias extraordinarias o el impacto de eventos en la vida de individuos"
+              - "Fenómenos Sociales y Culturales: Análisis de modas, movimientos juveniles, el impacto de ciertas expresiones artísticas en la sociedad, o fenómenos que se vuelven virales"
+          
+          - label: "Arquitectura"
+            definition: "Contenidos relacionados con arquitectura y diseño."
+            tags: ["arquitectura", "diseño", "construcción", "edificios", "urbanismo"]
+          
+          - label: "Buenos Aires"
+            definition: "Contenidos específicos sobre la Ciudad de Buenos Aires."
+            tags: ["ciudad", "CABA", "vida urbana", "porteño", "Buenos Aires"]
+          
+          - label: "Comunidad"
+            definition: "Contenidos sobre comunidad y sociedad civil."
+            tags: ["comunidad", "sociedad civil", "organizaciones", "ONGs", "voluntariado"]
+
+      - label: "Lifestyle"
+        subtematicas:
+          - label: "Gastronomía"
+            definition: "Se enfoca en el mundo de la cocina, las experiencias culinarias, las bebidas y las tendencias alimentarias."
+            tags: ["restaurantes", "experiencias culinarias", "aperturas", "bares", "gastronomía", "eventos culinarios", "recetas", "cocina casera", "técnicas cocina", "chefs", "vinos", "bebidas", "bodegas", "maridajes", "coctelería", "consumo responsable", "tendencias gastronómicas", "veganismo", "plant-based", "cocina de autor", "dietas", "consumo consciente"]
+            subtopics:
+              - "Restaurantes y Experiencias Culinarias: Reseñas de restaurantes, nuevas aperturas, bares, propuestas gastronómicas innovadoras y eventos culinarios"
+              - "Recetas y Cocina Casera: Preparaciones culinarias, técnicas de cocina, consejos para el hogar y chefs destacados en el ámbito doméstico"
+              - "Vinos y Bebidas: Novedades de bodegas, maridajes, tendencias en bebidas, coctelería y el consumo responsable"
+              - "Tendencias Gastronómicas y Saludables: Análisis de nuevas corrientes en alimentación (veganismo, plant-based, cocina de autor), dietas y sus beneficios, consumo consciente"
+          
+          - label: "Viajes y Turismo"
+            definition: "Inspira a explorar nuevos destinos y ofrece consejos prácticos para planificar aventuras y disfrutar del ocio."
+            tags: ["destinos nacionales", "destinos internacionales", "guías de viaje", "atracciones turísticas", "experiencias culturales", "aventuras", "consejos viajeros", "planificación", "presupuestos", "documentación", "seguridad", "mejores épocas", "turismo sostenible", "turismo aventura", "turismo lujo", "tecnología viajes"]
+            subtopics:
+              - "Destinos Nacionales e Internacionales: Guías de viaje, recomendaciones de lugares, atracciones turísticas, experiencias culturales y aventuras"
+              - "Consejos y Guías para Viajeros: Artículos sobre planificación de viajes, presupuestos, documentación, seguridad y las mejores épocas para visitar ciertos lugares"
+              - "Tendencias en Turismo: Nuevas formas de viajar, turismo sostenible, experiencias de aventura o de lujo, el impacto de la tecnología en los viajes"
+          
+          - label: "Bienestar y Salud Mental"
+            definition: "Se centra en el equilibrio personal, la salud integral, el desarrollo personal y las prácticas que contribuyen a una mejor calidad de vida."
+            tags: ["salud mental", "salud emocional", "mindfulness", "estrés", "ansiedad", "depresión", "resiliencia", "equilibrio emocional", "fitness", "actividad física", "ejercicio", "deportes", "rutinas", "disciplinas alternativas", "nutrición", "alimentación balanceada", "dietas", "superalimentos", "desarrollo personal", "liderazgo", "productividad", "inteligencia emocional", "coaching"]
+            subtopics:
+              - "Salud Mental y Emocional: Artículos sobre mindfulness, manejo del estrés, ansiedad, depresión, resiliencia y el cuidado del equilibrio emocional"
+              - "Fitness y Actividad Física: Rutinas de ejercicio, deportes, disciplinas alternativas y consejos para mantenerse activo"
+              - "Nutrición y Hábitos Saludables: Consejos sobre alimentación balanceada, dietas específicas, superalimentos y la importancia de un estilo de vida consciente"
+              - "Desarrollo Personal y Liderazgo: Artículos sobre productividad, inteligencia emocional, liderazgo, coaching y el crecimiento individual"
+          
+          - label: "Moda, Belleza y Estilo Personal"
+            definition: "Abarca las últimas tendencias, consejos para el cuidado personal y la expresión a través del vestuario y la imagen."
+            tags: ["tendencias moda", "pasarelas", "colecciones", "diseñadores", "must-haves", "belleza", "maquillaje", "skincare", "tratamientos", "productos belleza", "trucos belleza", "estilo de vida", "compras", "regalos", "consumo inteligente", "glamour", "celebridades", "moda influencers"]
+            subtopics:
+              - "Tendencias de Moda: Cobertura de pasarelas, nuevas colecciones, diseñadores, 'must-haves' de temporada y cómo adaptar las tendencias al día a día"
+              - "Belleza y Cuidado Personal: Consejos de maquillaje, rutinas de skin-care, tratamientos, productos recomendados y trucos de belleza"
+              - "Estilo de Vida y Compras: Guías de regalos, consejos para un consumo inteligente, el 'glamour' de las celebridades y la influencia de la moda en el estilo de vida"
+          
+          - label: "Hogar, Deco y Jardín"
+            definition: "Se enfoca en el diseño de interiores, la organización del hogar y el cuidado de espacios verdes, buscando inspirar y ofrecer soluciones prácticas."
+            tags: ["decoración", "diseño interiores", "mobiliario", "estilos decorativos", "reformas", "organización", "limpieza", "mantenimiento", "electrodomésticos", "ahorro energía", "jardinería", "paisajismo", "plantas", "jardines", "huertas urbanas", "tecnología hogar", "domótica", "automatización", "dispositivos inteligentes"]
+            subtopics:
+              - "Decoración y Diseño de Interiores: Tendencias en mobiliario, estilos decorativos, reformas y consejos para embellecer los espacios del hogar"
+              - "Organización y Mantenimiento del Hogar: Trucos de limpieza, organización de espacios, consejos para el mantenimiento de electrodomésticos y el ahorro de energía"
+              - "Jardinería y Paisajismo: Cuidado de plantas, diseño de jardines, huertas urbanas y consejos para mantener espacios verdes"
+              - "Tecnología para el Hogar: Dispositivos inteligentes, sistemas de automatización y soluciones tecnológicas para el confort y la eficiencia en el hogar"
+          
+          - label: "Tecnología"
+            definition: "Novedades y análisis sobre tecnología."
+            tags: ["gadgets", "apps", "innovación", "tech", "smartphones", "software", "hardware"]
+          
+          - label: "Revistas"
+            definition: "Contenidos de las diferentes revistas de La Nación."
+            tags: ["Hola", "Jardín", "Living", "Lugares", "Ohlalá", "Rolling Stone", "Brando", "LN Revista"]
+
+      - label: "Cultura y Espectáculos"
+        subtematicas:
+          - label: "Cine y Series"
+            definition: "Abarca la producción audiovisual, incluyendo películas estrenadas en salas o plataformas, series de televisión y la industria detrás de ellas."
+            tags: ["estrenos", "películas", "series", "streaming", "Netflix", "HBO", "Disney+", "Prime Video", "críticas", "reseñas", "actores", "directores", "talentos", "perfiles", "entrevistas", "festivales", "premios", "Oscar", "Cannes", "Mar del Plata", "industria audiovisual", "productoras", "plataformas"]
+            subtopics:
+              - "Estrenos y Novedades: Críticas de películas y series recién lanzadas, avances y análisis de lo más reciente en la cartelera o el streaming"
+              - "Actores, Directores y Talentos: Perfiles, entrevistas, noticias sobre la carrera y los proyectos de figuras destacadas del cine y la televisión"
+              - "Festivales y Premios: Cobertura de eventos cinematográficos importantes como los Oscar, Cannes, Mar del Plata, y la entrega de otros galardones"
+              - "Industria Audiovisual: Noticias sobre productoras, plataformas de streaming, el negocio detrás del cine y la televisión"
+          
+          - label: "Música y Espectáculos en Vivo"
+            definition: "Concentra la información sobre artistas musicales, lanzamientos discográficos, conciertos y festivales."
+            tags: ["artistas", "músicos", "bandas", "lanzamientos", "canciones", "álbumes", "videoclips", "conciertos", "shows", "festivales", "giras", "eventos musicales", "industria musical", "streaming musical", "derechos autor", "tecnología musical"]
+            subtopics:
+              - "Artistas y Lanzamientos: Novedades sobre músicos y bandas, estrenos de canciones, álbumes y videoclips"
+              - "Conciertos y Festivales: Cobertura de shows en vivo, giras, festivales de música masivos y eventos especiales"
+              - "Industria Musical: Noticias sobre el negocio de la música, plataformas de streaming, derechos de autor y el impacto de la tecnología"
+          
+          - label: "Artes Escénicas y Cultura"
+            definition: "Abarca el teatro, la danza y otras expresiones artísticas con un enfoque más cercano al público masivo."
+            tags: ["teatro", "obras teatrales", "danza", "espectáculos danza", "musicales", "cartelera teatral", "humor", "stand up", "comedia", "humoristas", "eventos culturales", "exposiciones", "ferias temáticas"]
+            subtopics:
+              - "Teatro y Danza: Críticas de obras teatrales, espectáculos de danza, musicales y la cartelera teatral"
+              - "Humor y Stand Up: Cobertura de shows de comedia, humoristas y nuevas figuras del stand up"
+              - "Eventos Culturales Diversos: Otros eventos que combinan entretenimiento y cultura, কাশী exposiciones interactivas, ferias temáticas, etc."
+          
+          - label: "Fama y Vida de Celebridades"
+            definition: "Se centra en la vida pública y privada de las figuras del espectáculo, la farándula y los eventos sociales."
+            tags: ["farándula", "celebridades", "famosos", "vida personal", "romances", "rupturas", "escándalos", "vacaciones", "eventos familiares", "reality shows", "televisión", "programas TV", "participantes", "polémicas", "redes sociales", "publicaciones virales", "fans", "influencers", "eventos sociales", "galas", "fiestas", "alfombra roja", "estilo celebridades"]
+            subtopics:
+              - "Farándula y Vida Personal: Noticias sobre romances, rupturas, escándalos, vacaciones, eventos familiares y el día a día de los famosos"
+              - "Televisión y Reality Shows: Seguimiento de programas de televisión populares, especialmente realities, sus participantes, debates y polémicas"
+              - "Redes Sociales y Famosos: El impacto de las plataformas digitales en la vida de las celebridades, sus publicaciones virales y su interacción con los fans"
+              - "Eventos Sociales y Alfombras Rojas: Cobertura de galas, fiestas, estrenos y el estilo de las celebridades en eventos de alto perfil"
+          
+          - label: "LN Joven"
+            definition: "Cobertura exclusiva y detallada de noticias orientadas únicamente a un público 'Joven'."
+            tags: ["gaming", "videojuegos", "lanzamientos juegos", "tendencias gaming", "ofertas", "Steam", "Epic", "conferencias gaming", "influencers", "premios influencers", "competencias", "streaming", "plataformas streaming", "viralización", "cultura joven"]
+            subtopics:
+              - "Gaming: Lanzamientos de Juegos, Tendencias, ofertas en Steam, Epic y cualquier otra operadora de Juegos. Conferencias de Gaming"
+              - "Influencers: Noticias relacionadas al mundo de los influencers, premios, competencias, nuevos influencers, etc."
+              - "Streaming: Noticias cuyo origen son las plataformas de streaming y tienen potencial de viralización"
+            note: "Las notas relacionadas a cartelera de cine o teatro serán consideradas como HARD."
+
+  - id: "trends"
+    label: "Trends"
+    definition: "Enfocado en temas, comportamientos o fenómenos emergentes que están ganando popularidad en un momento determinado."
+    context: "Viralidad, conversación social, curiosidad o entretenimiento. El contenido es secundario al fenómeno de popularidad."
+    note: "Trends puede contener dentro de su temática cualquier tipo de noticia, varía por el tipo de contenido o de intención. El foco está en la viralidad y popularidad emergente, no en la temática en sí."
+    
+    tematicas:
+      - label: "Economía Trends"
+        definition: "Temas económicos que están ganando popularidad o generando conversación social."
+        subtematicas:
+          - label: "Tendencias Económicas Virales"
+            tags: ["economía viral", "finanzas trending", "inversiones populares", "cripto viral"]
+      
+      - label: "Política Trends"
+        definition: "Temas políticos que están siendo tendencia en redes sociales o medios."
+        subtematicas:
+          - label: "Política Viral"
+            tags: ["política trending", "viralización política", "debate público", "controversias"]
+      
+      - label: "Cultura y Espectáculos Trends"
+        definition: "Fenómenos de entretenimiento que están en boca de todos."
+        subtematicas:
+          - label: "Entretenimiento Viral"
+            tags: ["trending", "viral", "redes sociales", "memes", "fenómeno cultural", "challenge"]
+      
+      - label: "Lifestyle Trends"
+        definition: "Tendencias de estilo de vida emergentes."
+        subtematicas:
+          - label: "Tendencias de Estilo de Vida"
+            tags: ["lifestyle viral", "tendencias consumo", "fenómenos sociales", "hacks virales"]
+      
+      - label: "Sociedad Trends"
+        definition: "Comportamientos o movimientos sociales emergentes."
+        subtematicas:
+          - label: "Fenómenos Sociales Emergentes"
+            tags: ["sociedad trending", "comportamientos emergentes", "movimientos sociales", "causas virales"]
+
+  - id: "no_news"
+    label: "No News"
+    definition: "Contenido adicional de La Nación que no son noticias."
+    context: "Cables de agencia sin editar, newsletters automáticos, contenido administrativo o que no constituye producción periodística propia."
+    note: "No news puede contener tanto contenido que no se consideran notas, notas que no son producción propia (Agencias) o bien notas que se ya se consideran mediante otra categoría (newsletter, edición impresa, másmúsica)."
+    tematicas:
+      - label: "Servicios y Utilidades"
+        subtematicas:
+          - label: "Juegos"
+            definition: "Contenido lúdico e interactivo."
+            tags: ["crucigramas", "sopas de letras", "juegos interactivos", "trivia", "pasatiempos"]
+          
+          - label: "Club LN"
+            definition: "Beneficios y servicios para suscriptores."
+            tags: ["club", "beneficios", "suscriptores", "descuentos", "programa fidelidad"]
+          
+          - label: "Bonvivir"
+            definition: "Plataforma de beneficios."
+            tags: ["bonvivir", "beneficios", "descuentos", "ofertas"]
+          
+          - label: "Foodit"
+            definition: "Servicio de delivery gastronómico."
+            tags: ["foodit", "delivery", "gastronomía", "pedidos online"]
+          
+          - label: "Información Útil"
+            definition: "Datos de servicio público."
+            tags: ["clima", "feriados", "horóscopo", "lotería", "servicios"]
+      
+      - label: "Contenido No Editorial"
+        subtematicas:
+          - label: "Agencias"
+            definition: "Cables y contenido de agencias sin edición propia."
+            tags: ["cables", "agencias", "sin edición", "wire", "despachos"]
+          
+          - label: "Newsletters"
+            definition: "Boletines y resúmenes automáticos."
+            tags: ["newsletter", "boletín", "resumen", "email", "suscripción"]
+          
+          - label: "Edición Impresa"
+            definition: "Contenido específico de la versión en papel."
+            tags: ["papel", "edición impresa", "tapa", "diario físico"]
+          
+          - label: "Avisos"
+            definition: "Contenido publicitario y clasificados."
+            tags: ["avisos", "clasificados", "fúnebres", "necrológicas", "publicidad"]
+          
+          - label: "Otros"
+            definition: "Contenido misceláneo sin categoría definida."
+            tags: ["eliminadas", "sin categoría", "no aplica", "varios"]
+          
+          - label: "Másmúsica"
+            definition: "Contenido especial de música."
+            tags: ["música", "contenido especial", "suplemento musical"]
+
+# Géneros Periodísticos (transversal a todas las jerarquías)
+journalistic_genres:
+  - id: "breaking_news"
+    label: "Breaking News"
+    definition: "Noticias con énfasis en la inmediatez y la urgencia. Eventos que están ocurriendo o acaban de suceder."
+    indicators: ["urgente", "último momento", "en vivo", "ahora"]
+  
+  - id: "noticia"
+    label: "Noticia"
+    definition: "Informa sobre un hecho reciente y relevante de manera objetiva, concisa y directa."
+    indicators: ["informar", "reportar", "anunciar"]
+  
+  - id: "opinion"
+    label: "Opinión"
+    definition: "Interpretación, juicio de valor o perspectiva personal del autor sobre un tema."
+    indicators: ["columna", "editorial", "análisis", "perspectiva"]
+  
+  - id: "cronica"
+    label: "Crónica"
+    definition: "Relata un suceso en desarrollo o recién finalizado, combinando información y narración."
+    indicators: ["relato", "testimonio", "reconstrucción"]
+  
+  - id: "entrevista"
+    label: "Entrevista"
+    definition: "Conversación con protagonistas para explorar personalidad, trayectoria o reflexiones."
+    indicators: ["entrevista", "conversación", "diálogo"]
+  
+  - id: "investigacion"
+    label: "Investigación"
+    definition: "Explora un tema complejo en profundidad, con múltiples fuentes, datos y perspectivas."
+    indicators: ["investigación", "revelación", "datos exclusivos", "fuentes múltiples"]
+
+# Formatos (transversal)
+content_formats:
+  - id: "monoformato"
+    label: "Monoformato"
+    definition: "Contenido que se apoya en un solo formato dominante (texto o video)."
+  
+  - id: "multiformato"
+    label: "Multiformato"
+    definition: "Combina más de un formato de manera complementaria (texto + video + infografía)."
+  
+  - id: "interactivo"
+    label: "Interactivo"
+    definition: "Requiere participación activa del usuario (juegos, visualizaciones, calculadoras, test)."
+
+# Temporalidad (transversal)
+temporality:
+  - id: "perecedero"
+    label: "Perecedero"
+    definition: "Contenido con vigencia limitada, pierde relevancia rápidamente."
+    max_hours: 48
+  
+  - id: "no_perecedero"
+    label: "No Perecedero"
+    definition: "Contenido evergreen, mantiene relevancia en el tiempo."
+    max_hours: 8760  # 1 año o más
