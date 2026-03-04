@@ -13,7 +13,7 @@ export default defineConfig(({mode}) => {
       VitePWA({
         registerType: 'autoUpdate',
         manifest: {
-          name: 'Soft Health Dashboard',
+          name: 'Yaml Explorer Reader',
           short_name: 'HealthDash',
           description: 'A soft, card-based wellness dashboard UI',
           theme_color: '#E9EAED',
